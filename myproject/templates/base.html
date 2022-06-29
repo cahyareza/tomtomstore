@@ -1,216 +1,208 @@
-<!doctype html>
 {% load i18n static %}
 
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.1/css/bulma.min.css">
-  <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
-    integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
-  <link href="https://fonts.googleapis.com/css2?family=Merriweather&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
-  <link rel="stylesheet" href="{% static 'debug.css' %}">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Hello Bulma!</title>
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.1/css/bulma.min.css">
+    <script defer src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
+    <link rel="icon" type="image/png" href="{% static 'site/img/favicon-32x32.png' %}" sizes="32x32" />
+    <link rel="icon" type="image/png" href="{% static 'site/img/favicon-16x16.png' %}" sizes="16x16" />
+<!--    <link rel="stylesheet" href="{% static 'site/css/debug.css' %}" crossorigin="anonymous" />-->
+    <link rel="stylesheet" href="{% static 'site/css/helpers.css' %}" crossorigin="anonymous" />
+    <link rel="stylesheet" href="{% static 'site/css/grid.css' %}" crossorigin="anonymous" />
 
-  <style>
-    @media(max-width: 500px) {
-      .reverse-columns {
-        flex-direction: column-reverse;
-        display: flex;
-      }
-    }
+    <style>
 
-    .titled {
-      font-family: 'Merriweather', serif !important;
-      font-size: 58px !important;
-      font-weight: 400 !important;
-      line-height: 64px !important;
-    }
+.hero {
+	background: black url("{% static 'site/img/higgs_domino_large.jpg' %}")
+	    center / cover;
+}
 
-    .subtitled {
-      font-family: 'Merriweather', serif !important;
-      font-size: 22px !important;
-      font-weight: 400 !important;
-      line-height: 36px !important;
-    }
-  </style>
+@media (max-width: 1024px) { .hero { background: black url("{% static 'site/img/higgs_domino_small.jpg' %}") center / cover; } }
+@media (max-width:  768px) { .hero { background: black url("{% static 'site/img/higgs_domino_small.jpg' %}") center / cover; } }
+    </style>
 </head>
-
 <body>
-  <!-- NavBar va a todo lo ancho -->
-  <nav class="navbar" role="navigation" aria-label="main navigation">
-    <div class="navbar-brand">
-      <a class="navbar-item" href="https://bulma.io">
-        <img src="https://bulma.io/images/bulma-logo.png" width="112" height="28">
-      </a>
-    </div>
 
-    <div class="navbar-menu">
-
-      <div class="navbar-end">
-        <a class="navbar-item">
-          WHY?
-        </a>
-
-        <a class="navbar-item">
-          BUY
-        </a>
-
-        <a class="navbar-item">
-          ILLUSTRATION SERIES
-        </a>
-
-        <a class="navbar-item">
-          EXCLUSIVE ILLUSTRATIONS
-        </a>
-
-      </div>
-    </div>
-  </nav>
-
-  <!-- Hero del producto -->
-  <section class="hero is-white is-fullheight">
-    <div class="hero-body">
-      <div class="container">
-        <div class="columns  is-vcentered reverse-columns">
-          <div class="column
-          is-10-mobile
-          is-10-tablet
-          is-5-desktop
-          is-5-widescreen
-          is-5-fullhd " data-aos="fade-down">
-            <h1 class="title titled is-1 mb-6">
-              Evolving business with technology
-            </h1>
-            <div class="buttons">
-              <button class="button is-yellow">Esablished technical teams</button>
-              <button class="button">Less-technical teams</button>
+    <section class="hero is-fullheight">
+    	<div class="hero-head">
+            <div class="columns is-mobile is-marginless heading has-text-weight-bold">
+                <div class="column left">
+                    <figure class="navbar-item image">
+                        <img src="https://assets-global.website-files.com/5e6b63ac3b6e253f11889f39/60acf4cc122cf007e4b622fa_teslalogo.svg" style="width: 6.25rem; height: 1rem;">
+                    </figure>
+                </div>
+                <div class="column center desktop">
+                    <p class="navbar-item has-text-black">MODEL S </p>
+                    <p class="navbar-item has-text-black">MODEL X </p>
+                    <p class="navbar-item has-text-black">MODEL 3 </p>
+                    <p class="navbar-item has-text-black">ROADSTER</p>
+                    <p class="navbar-item has-text-black">ENERGY  </p>
+                </div>
+                <div class="column right">
+                    <p class="navbar-item desktop has-text-black">SHOP     </p>
+                    <p class="navbar-item desktop has-text-black">SIGN IN  </p>
+                    <figure class="navbar-item image center">
+                        <i class="fas fa-bars" style="width: 1rem; height: 1rem;"></i>
+                    </figure>
+                </div>
             </div>
-          </div>
-          <div data-aos="fade-right" class="column
-          is-10-mobile
-          is-10-tablet
-          is-4-desktop
-          is-7-widescreen
-          is-4-fullhd is-offset-1-fullhd">
-            <figure class="image is-square">
-              <img src="../images/undraw_Camera_re_cnp4.svg">
-            </figure>
-          </div>
-
         </div>
-      </div>
-    </div>
-  </section>
+        <!-- .hero-body -->
+        <section class="hero-body">
+            <div class="is-overlay has-text-centered single-spaced" style="top: 82px; ">
+                <h1 class="subtitle is-4 has-text-black">STORE</h1>
+                <h2 class="title is-1 has-text-black">TOMTOM</h2>
+                <p class="subtitle is-5 has-text-centered has-text-white">
+                    AGEN CHIPS AMANAH & TERPERCAYA
+                </p>
+            </div>
+        </section>
 
-  <section class="hero is-white is-fullheight">
-    <div class="hero-body">
-      <div class="container">
-        <div class="columns  is-vcentered">
-          <div data-aos="fade-left" class="column
-          is-10-mobile is-offset-1-mobile
-          is-10-tablet is-offset-1-tablet
-          is-4-desktop is-offset-1-desktop
-          is-4-widescreen is-offset-1-widescreen
-          is-4-fullhd is-offset-1-fullhd">
-            <figure class="image is-square">
-              <img src="../images/undraw_Camera_re_cnp4.svg">
-            </figure>
-          </div>
-          <div data-aos="fade-down" class="column
-          is-10-mobile is-offset-1-mobile
-          is-10-tablet is-offset-1-tablet
-          is-5-desktop is-offset-1-desktop
-          is-5-widescreen is-offset-1-widescreen
-          is-5-fullhd is-offset-1-fullhd">
-            <h1 class="titled title is-1 mb-6">
-              absurd illustrations that make sense
-            </h1>
-            <h2 class="subtitled subtitle">
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laborum cupiditate dolorum vitae dolores
-              nesciunt totam magni quas.
-            </h2>
-          </div>
+        <section class="section mt-6">
+            <div class="container">
+                <div class="columns is-vcentered reverse-columns">
+                    <div class="column" data-aos="fade-down">
+                        <article class="media notification is-warning">
+                                <figure class="media-left">
+                                    <span class="icon is-medium">
+                                        <i class="fab fa-2x fa-css3-alt"></i>
+                                    </span>
+                                </figure>
+                                <div class="media-content">
+                                    <div class="content">
+                                        <h1 class="title is-size-4">Ready Stock Higgs dominonya, Yang mau BONGKAR ayo kita gasskan !!!!
+                                            <br></br>
+                                            Jangan Tergiur Harga murah Tapi Menipu</h1>
+                                    </div>
+                                </div>
+                        </article>
+                    </div>
+                    <div class="column">
+                        <article class="media notification is-info">
+                                <figure class="media-left">
+                                    <span class="icon is-medium">
+                                        <i class="fab fa-2x fa-css3-alt"></i>
+                                    </span>
+                                </figure>
+                                <div class="media-content">
+                                    <div class="content">
+                                        <h1 class="title is-size-4">HARGA</h1>
+                                        <table class="table has-background-light">
+                                            <thead>
+                                                <tr>
+                                                    <th><abbr title="Position">Jumlah</abbr></th>
+                                                    <th><abbr title="Played">Harga (Rp)</abbr></th>
+                                                    <th><abbr title="Position">Jumlah</abbr></th>
+                                                    <th><abbr title="Played">Harga (Rp)</abbr></th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>100 M</td>
+                                                    <td>8.000</td>
+                                                    <td>600 M</td>
+                                                    <td>42.000</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>200 M</td>
+                                                    <td>15.000</td>
+                                                    <td>700 M</td>
+                                                    <td>50.000</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>300 M</td>
+                                                    <td>23.000</td>
+                                                    <td>800 M</td>
+                                                    <td>57.000</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>400 M</td>
+                                                    <td>30.000</td>
+                                                    <td>1 B</td>
+                                                    <td>65.000</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>500 M</td>
+                                                    <td>35.000</td>
+                                                    <td>1.5 B</td>
+                                                    <td>100.000</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                        </article>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-        </div>
-      </div>
-    </div>
-  </section>
+        <section class="section">
+            <div class="container is-max-desktop">
 
-  <section class="hero is-white is-fullheight">
-    <div class="hero-body">
-      <div class="container">
-        <div class="columns  is-vcentered reverse-columns">
-          <div data-aos="fade-right" class="column
-          is-10-mobile is-offset-1-mobile
-          is-10-tablet is-offset-1-tablet
-          is-5-desktop is-offset-1-desktop
-          is-5-widescreen is-offset-1-widescreen
-          is-5-fullhd is-offset-1-fullhd">
-            <h1 class="title titled is-1 mb-6">
-              absurd illustrations that make sense
-            </h1>
-            <h2 class="subtitle subtitled">
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laborum cupiditate dolorum vitae dolores
-              nesciunt totam magni quas.
-            </h2>
-          </div>
-          <div data-aos="fade-down" class="column
-          is-10-mobile is-offset-1-mobile
-          is-10-tablet is-offset-1-tablet
-          is-4-desktop is-offset-1-desktop
-          is-4-widescreen is-offset-1-widescreen
-          is-4-fullhd is-offset-1-fullhd" data-aos="fade-up">
-            <figure class="image is-square">
-              <img src="../images/undraw_Camera_re_cnp4.svg">
-            </figure>
-          </div>
-
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="hero is-medium has-text-centered">
-    <div class="hero-body">
-      <div class="container">
-        <div class="columns is-centered">
-          <div data-aos="zoom-in-up" class="column is-8">
-            <h1 class="title titled is-1 mb-6">
-              Primary bold title <span id="typewriter"></span>
-            </h1>
-            <h2 class="subtitle subtitled">
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laborum cupiditate dolorum vitae dolores
-              nesciunt totam magni quas.
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-            </h2>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </section>
+                <div class="columns is-vcentered reverse-columns">
+                    <div class="column is-half is-offset-one-quarter" data-aos="fade-down">
+                        <article class="media notification is-warning">
+                                <figure class="media-left">
+                                    <span class="icon is-medium">
+                                        <i class="fab fa-2x fa-css3-alt"></i>
+                                    </span>
+                                </figure>
+                                <div class="media-content">
+                                    <div class="content">
+                                        <h1 class="title is-size-4">ALUR PEMBELIAN</h1>
+                                        <figure class="image is-4by3">
+                                            <img src="{% static 'site/img/alur_beli.png' %}">
+                                        </figure>
+                                    </div>
+                                </div>
+                        </article>
+                    </div>
+                </div>
+            </div>
+        </section>
 
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/TypewriterJS/2.13.1/core.min.js"></script>
-  <script>
-    new Typewriter('#typewriter', {
-      strings: ['typewriter', 'Effect', 'typewriter.js', 'example'],
-      autoStart: true,
-      loop: true,
-    });
-  </script>
-  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-  <script>
-    AOS.init({
-      once: true
-    });
-  </script>
+        <!-- .hero-foot -->
+        <main class="hero-foot center" style="padding: 2rem;">
+            <div id="grid" style="width: 768px;">
+                <div id="a" class="center-column">
+                    <p class="has-text-centered has-text-white">
+                        ​The quickest car in the world, with record-setting<br>
+                        acceleration, range and performance.
+                    </p>
+                </div>
+                <div id="b" class="center-column">
+                    <p class="title has-text-white">
+                        <i class="fas fa-tachometer-alt has-text-grey-light"
+                            style="width: 0.75em; height: 0.75em;"></i>
+                        1.9<span class="is-size-5">s</span>
+                    </p>
+                    <p class="subtitle has-text-white is-7">0-60 mph</p>
+                </div>
+                <div id="c" class="center-column" style="border-left: 1px solid gray;">
+                    <p class="title has-text-white"><span class="is-size-5">+</span>250<span class="is-size-5">mph</span></p>
+                    <p class="subtitle is-7 has-text-white">Top Speed</p>
+                </div>
+                <div id="d" class="center-column" style="border-left: 1px solid gray;">
+                    <p class="title has-text-white">620</span><span class="is-size-5">mi</span></p>
+                    <p class="subtitle is-7 has-text-white">Mile Range</p>
+                </div>
+                <div id="e" class="center-column">
+                    <a class="button is-danger is-inverted is-rounded is-outlined has-text-weight-bold"
+                        style="width: 100%; border: 0.15em solid white;">
+                        Reserve Now
+                    </a>
+                </div>
+            </div>
+        </main>
+        <!-- /.hero-foot -->
+    </section>
+
 </body>
-
 </html>
-
-
