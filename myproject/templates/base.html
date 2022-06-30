@@ -16,7 +16,6 @@
     <link rel="stylesheet" href="{% static 'site/css/grid.css' %}" crossorigin="anonymous" />
 
     <style>
-
 .hero {
 	background: black url("{% static 'site/img/higgs_domino_large.jpg' %}")
 	    center / cover;
@@ -164,6 +163,26 @@
                         </article>
                     </div>
                 </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div id="testimoniapp">
+                {% if .image %}
+                    <img :src="mainImage">
+                {% endif %}
+                <hr>
+                {% if product.images.all %}
+                    <hr>
+                    <div class="columns">
+                        <div class="column is-2" v-for="image in images">
+                            <figure class="image is-128x128">
+                                <img :src="image.thumbnail" @click="changeMainImage(image.image)">
+                            </figure>
+                        </div>
+                    </div>
+                {% endif %}
+                <hr>
             </div>
         </section>
 
