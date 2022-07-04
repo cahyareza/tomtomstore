@@ -132,4 +132,5 @@ dmypy.json
 !/static/.gitkeep
 
 # Secrets
-secrets.json
+secrets.jsonmyproject/site_static/site/.DS_Store
+myproject/site_static/site/.DS_Store

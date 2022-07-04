@@ -8,7 +8,7 @@
     <title>Hello Bulma!</title>
     <link rel="stylesheet"
           href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.1/css/bulma.min.css">
-    <script defer src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="icon" type="image/png" href="{% static 'site/img/favicon-32x32.png' %}" sizes="32x32" />
     <link rel="icon" type="image/png" href="{% static 'site/img/favicon-16x16.png' %}" sizes="16x16" />
 <!--    <link rel="stylesheet" href="{% static 'site/css/debug.css' %}" crossorigin="anonymous" />-->
@@ -26,246 +26,291 @@
     </style>
 </head>
 <body>
+    <div id="app">
+        <section class="hero is-fullheight">
 
-    <section class="hero is-fullheight">
-    	<div class="hero-head">
-            <div class="columns is-mobile is-marginless heading has-text-weight-bold">
-                <div class="column left">
+            <nav class="navbar has-background-info-light is-fixed-top" id="apps">
+                <div class="navbar-brand">
                     <figure class="navbar-item image">
-                        <img src="https://assets-global.website-files.com/5e6b63ac3b6e253f11889f39/60acf4cc122cf007e4b622fa_teslalogo.svg" style="width: 6.25rem; height: 1rem;">
+                        <img src="{% static 'site/img/tomtom.png' %}" style="width: 6.25rem; height: 1rem;">
                     </figure>
-                </div>
-                <div class="column center desktop">
-                    <p class="navbar-item has-text-black">MODEL S </p>
-                    <p class="navbar-item has-text-black">MODEL X </p>
-                    <p class="navbar-item has-text-black">MODEL 3 </p>
-                    <p class="navbar-item has-text-black">ROADSTER</p>
-                    <p class="navbar-item has-text-black">ENERGY  </p>
-                </div>
-                <div class="column right">
-                    <p class="navbar-item desktop has-text-black">SHOP     </p>
-                    <p class="navbar-item desktop has-text-black">SIGN IN  </p>
-                    <figure class="navbar-item image center">
-                        <i class="fas fa-bars" style="width: 1rem; height: 1rem;"></i>
-                    </figure>
-                </div>
-            </div>
-        </div>
-        <!-- .hero-body -->
-        <section class="hero-body">
-            <div class="is-overlay has-text-centered single-spaced" style="top: 82px; ">
-                <h1 class="subtitle is-4 has-text-black">STORE</h1>
-                <h2 class="title is-1 has-text-black">TOMTOM</h2>
-                <p class="subtitle is-5 has-text-centered has-text-white">
-                    AGEN CHIPS AMANAH & TERPERCAYA
-                </p>
-            </div>
-        </section>
-
-        <section class="section mt-6">
-            <div class="container">
-                <div class="columns is-vcentered reverse-columns">
-                    <div class="column" data-aos="fade-down">
-                        <article class="media notification is-warning">
-                                <figure class="media-left">
-                                    <span class="icon is-medium">
-                                        <i class="fab fa-2x fa-css3-alt"></i>
-                                    </span>
-                                </figure>
-                                <div class="media-content">
-                                    <div class="content">
-                                        <h1 class="title is-size-4">Ready Stock Higgs dominonya, Yang mau BONGKAR ayo kita gasskan !!!!
-                                            <br></br>
-                                            Jangan Tergiur Harga murah Tapi Menipu</h1>
-                                    </div>
-                                </div>
-                        </article>
-                    </div>
-                    <div class="column">
-                        <article class="media notification is-info">
-                                <figure class="media-left">
-                                    <span class="icon is-medium">
-                                        <i class="fab fa-2x fa-css3-alt"></i>
-                                    </span>
-                                </figure>
-                                <div class="media-content">
-                                    <div class="content">
-                                        <h1 class="title is-size-4">HARGA</h1>
-                                        <table class="table has-background-light">
-                                            <thead>
-                                                <tr>
-                                                    <th><abbr title="Position">Jumlah</abbr></th>
-                                                    <th><abbr title="Played">Harga (Rp)</abbr></th>
-                                                    <th><abbr title="Position">Jumlah</abbr></th>
-                                                    <th><abbr title="Played">Harga (Rp)</abbr></th>
-                                                </tr>
-                                            </thead>
-                                            <tbody>
-                                                <tr>
-                                                    <td>100 M</td>
-                                                    <td>8.000</td>
-                                                    <td>600 M</td>
-                                                    <td>42.000</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>200 M</td>
-                                                    <td>15.000</td>
-                                                    <td>700 M</td>
-                                                    <td>50.000</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>300 M</td>
-                                                    <td>23.000</td>
-                                                    <td>800 M</td>
-                                                    <td>57.000</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>400 M</td>
-                                                    <td>30.000</td>
-                                                    <td>1 B</td>
-                                                    <td>65.000</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>500 M</td>
-                                                    <td>35.000</td>
-                                                    <td>1.5 B</td>
-                                                    <td>100.000</td>
-                                                </tr>
-                                            </tbody>
-                                        </table>
-                                    </div>
-                                </div>
-                        </article>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="section">
-            <div class="container is-max-desktop">
-
-                <div class="columns is-vcentered reverse-columns">
-                    <div class="column is-half is-offset-one-quarter" data-aos="fade-down">
-                        <article class="media notification is-warning">
-                                <figure class="media-left">
-                                    <span class="icon is-medium">
-                                        <i class="fab fa-2x fa-css3-alt"></i>
-                                    </span>
-                                </figure>
-                                <div class="media-content">
-                                    <div class="content">
-                                        <h1 class="title is-size-4">ALUR PEMBELIAN</h1>
-                                        <figure class="image is-4by3">
-                                            <img src="{% static 'site/img/alur_beli.png' %}">
-                                        </figure>
-                                    </div>
-                                </div>
-                        </article>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="section">
-            <div id="testimoniapp">
-                <div class="columns">
-                     {% for testimoni in testimonis %}
-                        <div class="column is-half is-offset-one-quarter">
-                            {% if testimoni.picture %}
-                                <img src={{ testimoni.picture_thumbnail.url }}>
-                            {% endif %}
-        <!--                    {% if testimoni.picture.all %}-->
-        <!--                        <hr>-->
-        <!--                        <div class="columns">-->
-        <!--                            <div class="column is-2" v-for="image in images">-->
-        <!--                                <figure class="image is-128x128">-->
-        <!--                                    <img src={{ testimoni.picture_thumbnail.url }} @click="changeMainImage(image.image)">-->
-        <!--                                </figure>-->
-        <!--                            </div>-->
-        <!--                        </div>-->
-        <!--                    {% endif %}-->
-                            {% if product.image %}
-                                <img :src="mainImage">
-                            {% endif %}
-                            <hr>
-                            {% if product.images.all %}
-                                <hr>
-                                <div class="columns">
-                                    <div class="column is-2" v-for="image in images">
-                                        {% if image.thumbnail %}
-                                            <figure class="image is-128x128">
-                                                <img :src="image.thumbnail" @click="changeMainImage(image.image)">
-                                            </figure>
-                                        {% endif %}
-                                    </div>
-                                </div>
-                            {% endif %}
-                            <hr>
-
-
-
-
-
-                        </div>
-                    {% endfor %}
-                </div>
-            </div>
-        </section>
-
-
-        <!-- .hero-foot -->
-        <main class="hero-foot center" style="padding: 2rem;">
-            <div id="grid" style="width: 768px;">
-                <div id="a" class="center-column">
-                    <p class="has-text-centered has-text-white">
-                        ​The quickest car in the world, with record-setting<br>
-                        acceleration, range and performance.
-                    </p>
-                </div>
-                <div id="b" class="center-column">
-                    <p class="title has-text-white">
-                        <i class="fas fa-tachometer-alt has-text-grey-light"
-                            style="width: 0.75em; height: 0.75em;"></i>
-                        1.9<span class="is-size-5">s</span>
-                    </p>
-                    <p class="subtitle has-text-white is-7">0-60 mph</p>
-                </div>
-                <div id="c" class="center-column" style="border-left: 1px solid gray;">
-                    <p class="title has-text-white"><span class="is-size-5">+</span>250<span class="is-size-5">mph</span></p>
-                    <p class="subtitle is-7 has-text-white">Top Speed</p>
-                </div>
-                <div id="d" class="center-column" style="border-left: 1px solid gray;">
-                    <p class="title has-text-white">620</span><span class="is-size-5">mi</span></p>
-                    <p class="subtitle is-7 has-text-white">Mile Range</p>
-                </div>
-                <div id="e" class="center-column">
-                    <a class="button is-danger is-inverted is-rounded is-outlined has-text-weight-bold"
-                        style="width: 100%; border: 0.15em solid white;">
-                        Reserve Now
+                    <a v-bind:aria-expanded="isActive" v-bind:class="{ 'is-active': isActive }" role="button" class="navbar-burger"
+                       aria-label="menu" data-target="navbarMenu" @click="isActive = !isActive">
+                        <span aria-hidden="true"></span>
+                        <span aria-hidden="true"></span>
+                        <span aria-hidden="true"></span>
                     </a>
                 </div>
+
+                <div id="navbarMenu" class="navbar-menu has-text-centered" v-bind:class="{ 'is-active': isActive }">
+                    <div class="navbar-start has-text-weight-bold">
+                        <button @click="goto('div1')" class="button is-text">HOME</button>
+                        <button @click="goto('div2')" class="button is-text">HARGA</button>
+                        <button @click="goto('div3')" class="button is-text">ALUR BELI</button>
+                        <button @click="goto('div4')" class="button is-text">TESTIMONI</button>
+                        <button @click="goto('div5')" class="button is-text">KONTAK</button>
+                    </div>
+                </div>
+            </nav>
+
+            <div class="div" ref="div1">
+                <!-- .hero-body -->
+                <section class="section">
+                    <div class="is-overlay has-text-centered single-spaced" style="top: 82px; ">
+                        <h1 class="subtitle is-4 has-text-black">STORE</h1>
+                        <h2 class="title is-1 has-text-black">TOMTOM</h2>
+                    </div>
+                </section>
+
+                <section class="section mt-6">
+                    <div class="box">
+                        <div class="columns is-centered is-multiline">
+                            <div class="column is-one-third has-text-centered p-5">
+                                <span class="icon has-text-info is-medium">
+                                    <i class="fa-solid fa-3x fa-circle-check"></i>
+                                </span>
+                                <p class="subtitle is-size-4 has-text-black has-text-centered is-marginless mt-2">
+                                    <strong>Order Mudah</strong><br>
+                                </p>
+                                <p class="has-text-black has-text-centered is-marginless mt-4">Order cepat tanpa ribet langsung melalui whatsapp.</p>
+                            </div>
+                            <div class="column is-one-third has-text-centered p-5">
+                                <span class="icon has-text-info is-medium">
+                                    <i class="fas fa-3x fa-gauge-simple-high"></i>
+                                </span>
+                                <p class="subtitle is-size-4 has-text-black has-text-centered is-marginless mt-2">
+                                    <strong>Respon Cepat</strong><br>
+                                </p>
+                                <p class="has-text-black has-text-centered is-marginless mt-4">Kami siap melayani dan merespons order Anda dengan cepat.</p>
+                            </div>
+                            <div class="column is-one-third has-text-centered p-5">
+                                <span class="icon has-text-info is-medium">
+                                    <i class="fa-solid fa-3x fa-certificate"></i>
+                                </span>
+                                <p class="subtitle is-size-4 has-text-black has-text-centered is-marginless mt-2">
+                                    <strong>Terpercaya</strong><br>
+                                </p>
+                                <p class="has-text-black has-text-centered is-marginless mt-4">Agen chip yang sudah terbukti dengan banyak pelanggan tetap.</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
             </div>
-        </main>
-        <!-- /.hero-foot -->
+
+            <div class="div" ref="div2">
+                <section class="section">
+                    <div class="container">
+                        <div class="columns is-vcentered">
+                            <div class="column is-half is-offset-one-quarter">
+                                <article class="media notification is-info">
+                                        <div class="media-content">
+                                            <div class="content">
+                                                <h1 class="title has-text-centered is-size-4">HARGA</h1>
+                                                <table class="table has-background-light">
+                                                    <thead>
+                                                        <tr>
+                                                            <th><abbr title="Position">Jumlah</abbr></th>
+                                                            <th><abbr title="Played">Harga (Rp)</abbr></th>
+                                                            <th><abbr title="Position">Jumlah</abbr></th>
+                                                            <th><abbr title="Played">Harga (Rp)</abbr></th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr>
+                                                            <td>100 M</td>
+                                                            <td>8.000</td>
+                                                            <td>600 M</td>
+                                                            <td>42.000</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>200 M</td>
+                                                            <td>15.000</td>
+                                                            <td>700 M</td>
+                                                            <td>50.000</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>300 M</td>
+                                                            <td>23.000</td>
+                                                            <td>800 M</td>
+                                                            <td>57.000</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>400 M</td>
+                                                            <td>30.000</td>
+                                                            <td>1 B</td>
+                                                            <td>65.000</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>500 M</td>
+                                                            <td>35.000</td>
+                                                            <td>1.5 B</td>
+                                                            <td>100.000</td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                </article>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+            <div class="div" ref="div3">
+                <section class="section">
+                    <div class="container">
+                        <div class="columns is-vcentered reverse-columns">
+                            <div class="column is-half is-offset-one-quarter">
+                                <article class="media notification is-warning">
+                                    <div class="media-content">
+                                        <div class="content">
+                                            <h1 class="title has-text-centered is-size-4">ALUR BELI</h1>
+                                            <figure class="image is-4by3">
+                                                <img src="{% static 'site/img/alur_beli.png' %}">
+                                            </figure>
+                                        </div>
+                                    </div>
+                                </article>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+            <div class="div" ref="div4">
+                <section class="section">
+                    <div class="container is-max-desktop">
+                        <div class="columns is-multiline is-vcentered">
+                            <div class="column is-half is-offset-one-quarter">
+                                <article class="media notification is-warning">
+                                        <div class="media-content">
+                                            <div class="content">
+                                                <h1 class="title has-text-centered is-size-4">TESTIMONI</h1>
+                                                <figure class="image is-4by3">
+                                                    <img :src="mainImage">
+                                                </figure>
+                                                <div class="has-text-centered icons">
+                                                    <span class="icon" v-for="testimoni in testimonis" @click="changeMainImage(testimoni.picture)">
+                                                        <i class="fas fa-circle"></i>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                </article>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+            <!-- .hero-body -->
+
+            <!-- .hero-foot -->
+            <div class="div" ref="div5">
+                <main class="hero-foot center has-background-white p-2">
+                    <div id="grid" style="width: 788px;">
+                        <div id="a" class="center-column mt-2">
+                            <p class="subtitle has-text-centered has-text-black"><strong>
+                                Temukan kami di:
+                            </strong></p>
+                            <span class="icon has-text-info is-medium">
+                                <i class="fab fa-3x fa-facebook-square"></i>
+                            </span>
+                        </div>
+                        <div id="b" class="center-column mt-2">
+                            <p class="subtitle has-text-black has-text-centered is-marginless">
+                                <strong>TomTom Store</strong><br>
+                            </p>
+                            <p class="has-text-black has-text-centered is-marginless">Agen Chips Amanah & Terpercaya</p>
+                        </div>
+                        <div id="c" class="center-column mt-2">
+                            <p class="subtitle has-text-black has-text-centered">
+                                <strong>Pembayaran</strong><br>
+                            </p>
+                            <div class="columns is-multiline">
+                                <div class="column is-one-third is-gapless">
+                                   <figure class="image is-64x64">
+                                        <img src="{% static 'site/img/dana.png' %}">
+                                    </figure>
+                                </div>
+                                <div class="column is-one-third is-gapless">
+                                    <figure class="image is-64x64">
+                                        <img src="{% static 'site/img/bri.png' %}">
+                                    </figure>
+                                </div>
+                                <div class="column is-one-third is-gapless">
+                                    <figure class="image is-64x64">
+                                        <img src="{% static 'site/img/bca.png' %}">
+                                    </figure>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="d" class="center-column">
+                            <p class="subtitle has-text-black has-text-centered is-marginless mt-2">
+                                <strong>Jam Operasional</strong><br>
+                            </p>
+                            <p class="has-text-black has-text-centered is-marginless">Senin - Ahad(08.00 - 21.00 WIB)</p>
+                        </div>
+                        <div id="e" class="center-column">
+                            <p class="subtitle has-text-black has-text-centered">
+                                <strong>Kontak</strong><br>
+                            </p>
+                            <span class="icon has-text-primary is-medium">
+                                <i class="fab fa-3x fa-whatsapp"></i>
+                            </span>
+                        </div>
+                    </div>
+                </main>
+            </div>
+            <!-- /.hero-foot -->
+        </section>
+    </div>
+
+    <section class="section has-background-primary p-3">
+        <div class="center-column">
+            <p class="subtitle has-text-centered has-text-white">
+                © 2021 Copyright ########.org
+            </p>
+        </div>
     </section>
 
     <!-- /javascript -->
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <!-- /javascript -->
 
     <!-- /vue -->
     <script>
-        var testimoniapp = new Vue({
-            el: '#testimoniapp',
+        var app = new Vue({
+            el: '#app',
             delimiters: ['[[', ']]'],
             data () {
                 return {
-                    images: [{{ imagesstring|safe }}],
+                    mainImage: "",
+                    testimonis: [],
+                    isActive: false,
                 }
+            },
+            async mounted () {
+                const response = await axios
+                    .get(`http://127.0.0.1:8000/en/webpage/testimoni/`)
+                    .then(function(response) {
+                        return response.data;
+                    });
+                    this.mainImage = this.mainImage + response[0].picture;
+                    for (result of response) {
+                        this.testimonis.push(result);
+                    };
             },
             methods: {
                 changeMainImage(image) {
                     this.mainImage = image;
+                },
+                goto(refName) {
+                    var element = this.$refs[refName];
+                    var top = element.offsetTop;
+
+                    window.scrollTo(0, top);
                 },
             },
         });

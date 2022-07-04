@@ -56,6 +56,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     # third-party
     'imagekit',
+    'rest_framework',
     # local
     'myproject.apps.webpage',
 ]
