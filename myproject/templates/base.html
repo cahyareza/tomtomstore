@@ -14,22 +14,14 @@
 <!--    <link rel="stylesheet" href="{% static 'site/css/debug.css' %}" crossorigin="anonymous" />-->
     <link rel="stylesheet" href="{% static 'site/css/helpers.css' %}" crossorigin="anonymous" />
     <link rel="stylesheet" href="{% static 'site/css/grid.css' %}" crossorigin="anonymous" />
+    <link rel="stylesheet" href="{% static 'site/css/style.css' %}" crossorigin="anonymous" />
 
-    <style>
-.hero {
-	background: black url("{% static 'site/img/higgs_domino_large.jpg' %}")
-	    center / cover;
-}
-
-@media (max-width: 1024px) { .hero { background: black url("{% static 'site/img/higgs_domino_small.jpg' %}") center / cover; } }
-@media (max-width:  768px) { .hero { background: black url("{% static 'site/img/higgs_domino_small.jpg' %}") center / cover; } }
-    </style>
 </head>
 <body>
     <div id="app">
         <section class="hero is-fullheight">
 
-            <nav class="navbar has-background-info-light is-fixed-top" id="apps">
+            <nav class="navbar has-background-primary mb-6" id="apps">
                 <div class="navbar-brand">
                     <figure class="navbar-item image">
                         <img src="{% static 'site/img/tomtom.png' %}" style="width: 6.25rem; height: 1rem;">
@@ -55,11 +47,11 @@
 
             <div class="div" ref="div1">
                 <!-- .hero-body -->
-                <section class="section mt-6">
+                <section class="section">
                     <div class="box">
                         <div class="columns is-centered is-multiline">
                             <div class="column is-one-third has-text-centered p-5">
-                                <span class="icon has-text-info is-medium">
+                                <span class="icon has-text-primary is-medium">
                                     <i class="fa-solid fa-3x fa-circle-check"></i>
                                 </span>
                                 <p class="subtitle is-size-4 has-text-black has-text-centered is-marginless mt-2">
@@ -68,7 +60,7 @@
                                 <p class="has-text-black has-text-centered is-marginless mt-4">Order cepat tanpa ribet langsung melalui whatsapp.</p>
                             </div>
                             <div class="column is-one-third has-text-centered p-5">
-                                <span class="icon has-text-info is-medium">
+                                <span class="icon has-text-primary is-medium">
                                     <i class="fas fa-3x fa-gauge-simple-high"></i>
                                 </span>
                                 <p class="subtitle is-size-4 has-text-black has-text-centered is-marginless mt-2">
@@ -77,7 +69,7 @@
                                 <p class="has-text-black has-text-centered is-marginless mt-4">Kami siap melayani dan merespons order Anda dengan cepat.</p>
                             </div>
                             <div class="column is-one-third has-text-centered p-5">
-                                <span class="icon has-text-info is-medium">
+                                <span class="icon has-text-primary is-medium">
                                     <i class="fa-solid fa-3x fa-certificate"></i>
                                 </span>
                                 <p class="subtitle is-size-4 has-text-black has-text-centered is-marginless mt-2">
@@ -95,7 +87,7 @@
                     <div class="container">
                         <div class="columns is-vcentered">
                             <div class="column is-half is-offset-one-quarter">
-                                <article class="media notification is-info">
+                                <article class="media box is-white">
                                         <div class="media-content">
                                             <div class="content">
                                                 <h1 class="title has-text-centered is-size-4">HARGA</h1>
@@ -155,7 +147,7 @@
                     <div class="container">
                         <div class="columns is-vcentered reverse-columns">
                             <div class="column is-half is-offset-one-quarter">
-                                <article class="media notification is-warning">
+                                <article class="media box is-white">
                                     <div class="media-content">
                                         <div class="content">
                                             <h1 class="title has-text-centered is-size-4">ALUR BELI</h1>
@@ -176,7 +168,7 @@
                     <div class="container is-max-desktop">
                         <div class="columns is-multiline is-vcentered">
                             <div class="column is-half is-offset-one-quarter">
-                                <article class="media notification is-warning">
+                                <article class="media box is-white">
                                         <div class="media-content">
                                             <div class="content">
                                                 <h1 class="title has-text-centered is-size-4">TESTIMONI</h1>
@@ -198,9 +190,11 @@
             </div>
             <!-- .hero-body -->
 
+            <input-form @change-visible="changeVisible" :visible="visible"></input-form>
+
             <!-- .hero-foot -->
             <div class="div" ref="div5">
-                <main class="hero-foot center has-background-white p-2">
+                <main class="hero-foot center has-background-white-ter p-2">
                     <div id="grid" style="width: 788px;">
                         <div id="a" class="center-column mt-2">
                             <p class="subtitle has-text-centered has-text-black"><strong>
@@ -244,14 +238,6 @@
                             </p>
                             <p class="has-text-black has-text-centered is-marginless">Senin - Ahad(08.00 - 21.00 WIB)</p>
                         </div>
-                        <div id="e" class="center-column">
-                            <p class="subtitle has-text-black has-text-centered is-marginless mb-5">
-                                <strong>Kontak</strong><br>
-                            </p>
-                            <span class="icon has-text-primary">
-                                <i class="fab fa-3x fa-whatsapp"></i>
-                            </span>
-                        </div>
                     </div>
                 </main>
             </div>
@@ -259,9 +245,11 @@
         </section>
     </div>
 
-    <section class="section has-background-primary p-3 mt-4">
-        <div class="center-column">
-            <p class="subtitle has-text-centered has-text-white">
+    {% include 'parts/whatsapp_floating.html' %}
+
+    <section class="section has-background-primary p-1">
+        <div class="column has-text-left">
+            <p class="subtitle is-size-6 has-text-white">
                 © 2021 Copyright ########.org
             </p>
         </div>
@@ -270,45 +258,8 @@
     <!-- /javascript -->
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="{% static 'site/js/main.js' %}"></script>
     <!-- /javascript -->
-
-    <!-- /vue -->
-    <script>
-        var app = new Vue({
-            el: '#app',
-            delimiters: ['[[', ']]'],
-            data () {
-                return {
-                    mainImage: "",
-                    testimonis: [],
-                    isActive: false,
-                }
-            },
-            async mounted () {
-                const response = await axios
-                    .get(`http://127.0.0.1:8000/en/webpage/testimoni/`)
-                    .then(function(response) {
-                        return response.data;
-                    });
-                    this.mainImage = this.mainImage + response[0].picture;
-                    for (result of response) {
-                        this.testimonis.push(result);
-                    };
-            },
-            methods: {
-                changeMainImage(image) {
-                    this.mainImage = image;
-                },
-                goto(refName) {
-                    var element = this.$refs[refName];
-                    var top = element.offsetTop;
-
-                    window.scrollTo(0, top);
-                },
-            },
-        });
-    </script
-    <!-- /vue-->
 
 </body>
 </html>
