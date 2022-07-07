@@ -166,11 +166,9 @@
                             <div class="column is-half is-offset-one-quarter">
                                 <article class="media box is-white">
                                         <div class="media-content">
-                                            <div class="content">
+                                            <div class="content has-text-centered">
                                                 <h1 class="title has-text-centered is-size-4 is-size-5-mobile">TESTIMONI</h1>
-                                                <figure class="image is-4by3">
-                                                    <img :src="mainImage">
-                                                </figure>
+                                                <img :src="mainImage" style="width:300px; height:450px;" >
                                                 <div class="has-text-centered icons">
                                                     <span class="icon" v-for="testimoni in testimonis" @click="changeMainImage(testimoni.picture)">
                                                         <i class="fas fa-circle"></i>
