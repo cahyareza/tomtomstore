@@ -1,0 +1,200 @@
+{% extends "base.html" %}
+{% load i18n static %}
+
+{% block content %}
+
+    <div class="div" ref="div1">
+        <!-- .hero-body -->
+        <section class="section">
+
+            <h1 class="title has-text-centered is-size-4 is-size-5-mobile is-paddingless">PRODUK</h1>
+            {% include 'store/store_list.html' %}
+
+            {% include 'store/paginator.html' %}
+
+            <div class="box">
+                <div class="columns is-centered is-multiline">
+                    <div class="column is-one-third has-text-centered p-5">
+                        <span class="icon has-text-primary is-medium">
+                            <i class="fa-solid fa-3x fa-circle-check"></i>
+                        </span>
+                        <p class="subtitle is-size-4 is-size-5-mobile has-text-black has-text-centered is-marginless mt-2">
+                            <strong>Order Mudah</strong><br>
+                        </p>
+                        <p class="has-text-black has-text-centered is-marginless mt-4">Order cepat tanpa ribet langsung melalui whatsapp.</p>
+                    </div>
+                    <div class="column is-one-third has-text-centered p-5">
+                        <span class="icon has-text-primary is-medium">
+                            <i class="fas fa-3x fa-gauge-simple-high"></i>
+                        </span>
+                        <p class="subtitle is-size-4 is-size-5-mobile has-text-black has-text-centered is-marginless mt-2">
+                            <strong>Respon Cepat</strong><br>
+                        </p>
+                        <p class="has-text-black has-text-centered is-marginless mt-4">Kami siap melayani dan merespons order Anda dengan cepat.</p>
+                    </div>
+                    <div class="column is-one-third has-text-centered p-5">
+                        <span class="icon has-text-primary is-medium">
+                            <i class="fa-solid fa-3x fa-certificate"></i>
+                        </span>
+                        <p class="subtitle is-size-4 is-size-5-mobile has-text-black has-text-centered is-marginless mt-2">
+                            <strong>Terpercaya</strong><br>
+                        </p>
+                        <p class="has-text-black has-text-centered is-marginless mt-4">Agen chip yang sudah terbukti dengan banyak pelanggan tetap.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <div class="div" ref="div2">
+        <section class="section">
+            <div class="container">
+                <div class="columns is-vcentered">
+                    <div class="column is-half is-offset-one-quarter">
+                        <article class="media box is-white">
+                                <div class="media-content">
+                                    <div class="content">
+                                        <h1 class="title has-text-centered is-size-4 is-size-5-mobile">HARGA</h1>
+                                        <table class="table has-background-white is-size-7-mobile has-text-centered">
+                                            <thead>
+                                                <tr>
+                                                    <th><abbr title="Position">Jumlah</abbr></th>
+                                                    <th><abbr title="Played">Harga (Rp)</abbr></th>
+                                                    <th><abbr title="Position">Jumlah</abbr></th>
+                                                    <th><abbr title="Played">Harga (Rp)</abbr></th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>100 M</td>
+                                                    <td>8.000</td>
+                                                    <td>600 M</td>
+                                                    <td>42.000</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>200 M</td>
+                                                    <td>15.000</td>
+                                                    <td>700 M</td>
+                                                    <td>50.000</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>300 M</td>
+                                                    <td>23.000</td>
+                                                    <td>800 M</td>
+                                                    <td>57.000</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>400 M</td>
+                                                    <td>30.000</td>
+                                                    <td>1 B</td>
+                                                    <td>65.000</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>500 M</td>
+                                                    <td>35.000</td>
+                                                    <td>1.5 B</td>
+                                                    <td>100.000</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                        </article>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <div class="div" ref="div3">
+        <section class="section">
+            <div class="container">
+                <div class="columns is-vcentered reverse-columns">
+                    <div class="column is-half is-offset-one-quarter">
+                        <article class="media box is-white">
+                            <div class="content">
+                                <h1 class="title has-text-centered is-size-4 is-size-5-mobile">ALUR BELI</h1>
+                                <img src="{% static 'site/img/alur_beli.png' %}">
+                            </div>
+                        </article>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <div class="div" ref="div4">
+        <section class="section">
+            <div class="container is-max-desktop">
+                <div class="columns is-multiline is-vcentered">
+                    <div class="column is-half is-offset-one-quarter">
+                        <article class="media box is-white">
+                                <div class="media-content">
+                                    <div class="content has-text-centered">
+                                        <h1 class="title has-text-centered is-size-4 is-size-5-mobile">TESTIMONI</h1>
+                                        <img :src="mainImage" style="width:300px; height:450px;" >
+                                        <div class="has-text-centered icons">
+                                            <span class="icon" v-for="testimoni in testimonis" @click="changeMainImage(testimoni.picture)">
+                                                <i class="fas fa-circle"></i>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                        </article>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+    <!-- .hero-body -->
+
+    <input-form @change-visible="changeVisible" :visible="visible"></input-form>
+
+    <!-- .hero-foot -->
+    <div class="div" ref="div5">
+        <main class="hero-foot center has-background-white-ter p-2">
+            <div id="grid" style="width: 788px;">
+                <div id="a" class="center-column mt-2">
+                    <p class="subtitle is-size-5-mobile has-text-centered has-text-black"><strong>
+                        Temukan kami di:
+                    </strong></p>
+                    <span class="icon has-text-info is-medium">
+                        <a href="https://www.facebook.com/groups/370970267136489/?ref=share"><i class="fab fa-2x fa-facebook-square" ></i></a>
+                    </span>
+                </div>
+                <div id="b" class="column">
+                    <p class="subtitle is-size-5-mobile has-text-black has-text-centered is-marginless">
+                        <strong>TomTom Store</strong><br>
+                    </p>
+                    <p class="has-text-black has-text-centered is-marginless">Agen Chips Amanah & Terpercaya</p>
+                </div>
+                <div id="c" class="center-column">
+                    <p class="subtitle is-size-5-mobile has-text-black has-text-centered">
+                        <strong>Pembayaran</strong><br>
+                    </p>
+                    <div class="columns is-multiline is-paddingless is-marginless">
+                        <div class="column is-one-third is-gapless p-1 is-marginless">
+                            <img src="{% static 'site/img/dana.png' %}" style="width:50px; height:25px;">
+                        </div>
+                        <div class="column is-one-third is-gapless p-1 is-marginless">
+                            <img src="{% static 'site/img/bri.png' %}" style="width:50px; height:25px;">
+                        </div>
+                        <div class="column is-one-third is-gapless p-1 is-marginless">
+                            <img src="{% static 'site/img/bca.png' %}" style="width:50px; height:25px;">
+                        </div>
+                        <div class="column is-one-third is-offset-one-third is-gapless p-1 has-text-center">
+                            <img src="{% static 'site/img/gopay.png' %}" style="width:50px; height:25px;">
+                        </div>
+                    </div>
+                </div>
+                <div id="d" class="column">
+                    <p class="subtitle is-size-5-mobile has-text-black has-text-centered is-marginless">
+                        <strong>Jam Operasional</strong><br>
+                    </p>
+                    <p class="has-text-black has-text-centered is-marginless">Senin - Ahad(08.00 - 21.00 WIB)</p>
+                </div>
+            </div>
+        </main>
+    </div>
+
+{% endblock %}

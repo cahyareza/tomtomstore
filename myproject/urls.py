@@ -20,11 +20,15 @@ from django.urls import path, include
 from django.views.generic import TemplateView
 from django.conf.urls.static import static
 
+from .apps.core.views import frontpage
+
 
 urlpatterns = i18n_patterns(
-    path('', TemplateView.as_view(template_name="index.html")),
+    path('',frontpage, name='frontpage'),
+    # path('', TemplateView.as_view(template_name="frontpage.html")),
     path('admin/', admin.site.urls),
     path("webpage/", include(("myproject.apps.webpage.urls", "webpage"), namespace="webpage")),
+    path("store/", include(("myproject.apps.store.urls", "store"), namespace="store")),
 )
 
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

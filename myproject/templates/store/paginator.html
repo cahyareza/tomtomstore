@@ -1,0 +1,15 @@
+{% if product_list %}
+    <nav class="pagination is-centered" role="navigation" aria-label="pagination">
+        <ul class="pagination-list mobile">
+            {% for i in product_list.paginator.page_range %}
+                {% if product_list.number == i %}
+                    <li><a class="pagination-link is-current" aria-label="Page {{ i }}" aria-current="page">{{ i }}</a></li>
+                {% else %}
+                    <li><a href="?page={{ i }}" class="pagination-link" aria-label="Goto page {{ i }}">{{ i }}</a></li>
+                {% endif %}
+            {% endfor %}
+        </ul>
+    </nav>
+{% else %}
+    <div></div>
+{% endif %}

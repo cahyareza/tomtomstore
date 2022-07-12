@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+{% load i18n static %}
+
+{% block content %}
+    <div class="container p-5">
+        <div class="columns is-multiline">
+            <div class="column is-half">
+                {% if product.picture %}
+                    <figure class="image">
+                        <img src="{{ product.picture_large.url }}">
+                    </figure>
+                {% endif %}
+            </div>
+            <div class="column is-half">
+                <div class="box">
+                    <h1 class="title is-size-5-mobile">{{ product.title }}</h1>
+                    <hr>
+                    <h2 class="subtitle is-size-6-mobile has-text-grey">
+                        Rp {{ product.price }}
+                    </h2>
+                    <div class="control">
+                        <button class="button is-primary is-size-6 has-text-white p-4">
+                            <div class="media-left is-paddingless">
+                                <span class="icon has-text-white">
+                                    <i class="fa-brands fa-2x fa-whatsapp"></i>
+                                </span>
+                            </div>
+                            <div class="media-content is-paddingless">
+                                <p class="subtitle is-size-5 has-text-centered has-text-white">Pesan</p>
+                            </div>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="column is-12">
+                <div class="box">
+                    <h1 class="title has-text-centered has-text-white is-size-5 is-size-5-mobile has-background-primary p-1">Detail Produk</h1>
+                    {% if product.description %}
+                        <p>{{ product.description }}</p>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <hr>
+    <h1 class="title has-text-centered is-size-4 is-size-5-mobile">Related Produk</h1>
+    <div class="container p-4 mt-1 mb-1">
+        {% include 'store/related_products.html' %}
+    </div>
+
+    <input-form @change-visible="changeVisible" :visible="visible"></input-form>
+
+{% endblock %}

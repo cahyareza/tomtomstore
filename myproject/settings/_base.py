@@ -59,6 +59,7 @@ INSTALLED_APPS = [
     'rest_framework',
     # local
     'myproject.apps.webpage',
+    'myproject.apps.store',
 ]
 
 MIDDLEWARE = [
@@ -85,7 +86,6 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
-                'myproject.apps.webpage.context_processor.testimonis',
             ],
         },
     },

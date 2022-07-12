@@ -1,0 +1,22 @@
+<div class="columns is-multiline">
+    {% for p in related_products %}
+        <div class="column is-one-quarter-tablet is-two-quarter-mobile">
+            <div class="card has-background-light is-clickable">
+                <div class="card-image is-hidden-mobile">
+                    <figure class="image is-square">
+                        <img src="{{ p.picture.url }}">
+                    </figure>
+                </div>
+
+                <div class="card-content">
+                    <div class="media">
+                        <div class="media-content has-text-centered">
+                            <a href="{{ p.get_url_path }}"><p class="title is-size-5-tablet is-size-5-mobile" >{{ p.title }}</p></a>
+                            <p class="subtitle is-size-6-tablet is-size-6-mobile has-text-grey mt-1">Rp {{ p.price|floatformat:0 }}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    {% endfor %}
+</div>
