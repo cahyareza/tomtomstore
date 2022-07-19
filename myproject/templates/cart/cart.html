@@ -1,0 +1,120 @@
+{% extends "base.html" %}
+{% load i18n static %}
+
+{% block content %}
+    <div class="container">
+        <div class="box">
+            <h1 class="title is-size-3-tablet is-size-4-mobile has-text-centered">Keranjang Belanja</h1>
+
+            {% if cart %}
+                <div class="table">
+                    <table class="table is-narrow">
+                        <thead>
+                            <th>Product</th>
+                            <th>Price</th>
+                            <th></th>
+                        </thead>
+                        {% for item in cart %}
+                        {% with product=item.product %}
+                            <tbody>
+                                <tr>
+
+                                    <td class="is-size-6-mobile">
+                                        {{ product.title }}
+                                    </td>
+                                    <td>{{ item.total_price }}</td>
+                                    <td><button class="button is-danger is-size-7-mobile"><a href="{% url 'cart:remove_cart' product.id %}">Remove from cart</a></button></td>
+                                </tr>
+                            </tbody>
+                        {% endwith %}
+                        {% endfor %}
+
+                        <tfoot>
+                            <tr>
+                                <td>Total cost</td>
+                                <td>{{ cart.get_total_price }}</td>
+                            </tr>
+                        </tfoot>
+                    </table>
+                </div>
+
+                <div class="columns">
+                    <div class="column">
+                        {% for item in cart %}
+                        {% with product=item.product %}
+                        <div class="field is-hidden">
+                            <div class="control">
+                                <input class="input" type="text" name="product_title" value="{{ product.title }}">
+                            </div>
+                        </div>
+                        {% endwith %}
+                        {% endfor %}
+
+                        <div class="field is-hidden">
+                            <div class="control">
+                                <input class="input" type="text" name="total_price" value="{{ cart.get_total_price }}">
+                            </div>
+                        </div>
+
+                        <div class="field">
+                            <div class="control">
+                                <input class="input" type="text" name="nama" placeholder="Nama lengkap" required>
+                            </div>
+                        </div>
+
+                        <div class="field">
+                            <div class="control">
+                                <input class="input" type="text" name="nomor_hp" placeholder="Nomor Hp" required>
+                            </div>
+                        </div>
+
+                        <div class="field">
+                            <div class="control">
+                                <input class="textarea" type="text" name="pesan" placeholder="Tambahkan Pesan">
+                            </div>
+                        </div>
+
+                        <div class="field">
+                            <label class="label">Metode Pembayaran</label>
+
+                            <div class="control">
+                                <div class="select">
+                                    <select id="metode_bayar">
+                                        <option value="Select dropdown">Select dropdown</option>
+                                        <option value="With options">With options</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="field">
+                            <div class="control">
+                                <input class="input" type="text" name="nama_rekening" placeholder="Masukan nama pemilik rekening" required>
+                            </div>
+                        </div>
+
+                        <div class="field">
+                            <div class="control">
+                                <input class="input" type="text" name="id_akun" placeholder="Masukan id akun higgs domino">
+                            </div>
+                        </div>
+
+                        <div class="field">
+                            <div class="control">
+                                <button class="button is-primary" onclick="beli()"><a href="{% url 'cart:clear_cart' %}">Beli</a></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+            {% else %}
+                <p>Your cart is empty!</p>
+            {% endif %}
+        </div>
+    </div>
+{% endblock %}
+
+{% block js %}
+    <script src="{% static 'site/js/pesan_wa.js' %}"></script>
+{% endblock %}

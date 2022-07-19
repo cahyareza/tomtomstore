@@ -14,6 +14,10 @@ from myproject.apps.core.versioning import get_git_changeset_timestamp
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
+# cart
+SESSION_COOKIE_AGE = 86400
+CART_SESSION_ID = 'cart'
+
 EXTERNAL_BASE = os.path.join(BASE_DIR, "externals")
 EXTERNAL_LIBS_PATH = os.path.join(EXTERNAL_BASE, "libs")
 EXTERNAL_APPS_PATH = os.path.join(EXTERNAL_BASE, "apps")
@@ -60,6 +64,7 @@ INSTALLED_APPS = [
     # local
     'myproject.apps.webpage',
     'myproject.apps.store',
+    'myproject.apps.cart',
 ]
 
 MIDDLEWARE = [

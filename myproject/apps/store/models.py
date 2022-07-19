@@ -14,20 +14,24 @@ def upload_to(instance, filename):
     extension = extension.lower()
     return f"store/{now:%Y/%m}/{instance.pk}{extension}"
 
-class Payment(UrlBase):
+class Payment(models.Model):
     title = models.CharField(
         _("Title"),
         max_length=200,
     )
 
-    number = models.IntegerField(
+    number = models.CharField(
         _("Number"),
+        max_length=200,
     )
 
     name = models.CharField(
         _("Name"),
         max_length=200,
     )
+
+    def __str__(self):
+        return self.title
 
 
 class Product(UrlBase):
@@ -64,6 +68,10 @@ class Product(UrlBase):
         processors=[ResizeToFill(728, 250)],
         format="PNG"
     )
+
+
+    class Meta:
+        ordering = ("title",)
 
     def __str__(self):
         return self.title

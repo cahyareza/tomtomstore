@@ -7,7 +7,7 @@
             <div class="column is-half">
                 {% if product.picture %}
                     <figure class="image">
-                        <img src="{{ product.picture_large.url }}">
+                        <img src="{{ product.picture.url }}" style="width:600px; height:250px;">
                     </figure>
                 {% endif %}
             </div>
@@ -19,22 +19,17 @@
                         Rp {{ product.price }}
                     </h2>
                     <div class="control">
-                        <button class="button is-primary is-size-6 has-text-white p-4">
-                            <div class="media-left is-paddingless">
-                                <span class="icon has-text-white">
-                                    <i class="fa-brands fa-2x fa-whatsapp"></i>
-                                </span>
-                            </div>
-                            <div class="media-content is-paddingless">
-                                <p class="subtitle is-size-5 has-text-centered has-text-white">Pesan</p>
-                            </div>
-                        </button>
+                        <form action="{% url 'cart:add_cart' product.id %}" method="post">
+                            {{ cart_product_form }}
+                            {% csrf_token %}
+                            <input class="button is-primary" type="submit" value="Masukan ke Keranjang">
+                        </form>
                     </div>
                 </div>
             </div>
             <div class="column is-12">
                 <div class="box">
-                    <h1 class="title has-text-centered has-text-white is-size-5 is-size-5-mobile has-background-primary p-1">Detail Produk</h1>
+                    <h1 class="title has-text-centered has-text-bold is-size-5 is-size-5-mobile p-1">Detail Produk</h1>
                     {% if product.description %}
                         <p>{{ product.description }}</p>
                     {% endif %}

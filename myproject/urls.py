@@ -25,10 +25,10 @@ from .apps.core.views import frontpage
 
 urlpatterns = i18n_patterns(
     path('',frontpage, name='frontpage'),
-    # path('', TemplateView.as_view(template_name="frontpage.html")),
     path('admin/', admin.site.urls),
     path("webpage/", include(("myproject.apps.webpage.urls", "webpage"), namespace="webpage")),
     path("store/", include(("myproject.apps.store.urls", "store"), namespace="store")),
+    path("cart/", include(("myproject.apps.cart.urls", "cart"), namespace="cart")),
 )
 
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

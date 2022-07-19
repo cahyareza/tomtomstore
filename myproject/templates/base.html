@@ -26,6 +26,11 @@
                     <figure class="navbar-item image">
                         <img src="{% static 'site/img/tomtom.png' %}" style="width: 6.25rem; height: 1rem; padding: 0.01rem; margin-right:2rem;">
                     </figure>
+                    <a href="{% url 'cart:cart_detail' %}" class="navbar-item" style="position: absolute; top: 8px; right: 35px;">
+                        <span class="icon is-paddingless is-marginless has-text-bold">
+                           <i class="fa-solid fa-cart-plus" style="width:20px; height:20px;"></i>
+                        </span>
+                    </a>
                     <a v-bind:aria-expanded="isActive" v-bind:class="{ 'is-active': isActive }" role="button" class="navbar-burger"
                        aria-label="menu" data-target="navbarMenu" @click="isActive = !isActive">
                         <span aria-hidden="true"></span>
@@ -63,8 +68,8 @@
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="{% static 'site/js/main.js' %}"></script>
-    <script src="{% static 'site/js/pesan_wa.js' %}"></script>
     <!-- /javascript -->
+    {% block js %}{% endblock %}
 
 </body>
 </html>
