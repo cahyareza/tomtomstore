@@ -1,5 +1,4 @@
 function beli() {
-
     var product_titles = document.getElementsByName('product_title');
     var total_price = document.getElementsByName('total_price')[0].value;
     var nama = document.getElementsByName('nama')[0].value;
@@ -14,6 +13,26 @@ function beli() {
     for (var i=0; i < product_titles.length; i++) {
         products.push(product_titles[i].value);
     };
+
+    if (nama == "") {
+        alert("Nama is required!");
+        return false;
+    }
+
+    if (nomor_hp == "") {
+        alert("Nomor hp is required!");
+        return false;
+    }
+
+    if (nama_rekening == "") {
+        alert("Nama rekening is required!");
+        return false;
+    }
+
+    if (id_akun == "") {
+        alert("Id akun is required!");
+        return false;
+    }
 
     var url = "https://api.whatsapp.com/send?phone=6282213566900&text="
         + "Name: " + nama + "%0a"

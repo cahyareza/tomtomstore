@@ -38,72 +38,70 @@
                     </table>
                 </div>
 
-                <div class="columns">
-                    <div class="column">
-                        {% for item in cart %}
-                        {% with product=item.product %}
-                        <div class="field is-hidden">
-                            <div class="control">
-                                <input class="input" type="text" name="product_title" value="{{ product.title }}">
-                            </div>
-                        </div>
-                        {% endwith %}
-                        {% endfor %}
 
-                        <div class="field is-hidden">
-                            <div class="control">
-                                <input class="input" type="text" name="total_price" value="{{ cart.get_total_price }}">
-                            </div>
-                        </div>
+                {% for item in cart %}
+                {% with product=item.product %}
+                <div class="field is-hidden">
+                    <div class="control">
+                        <input class="input" type="text" name="product_title" value="{{ product.title }}">
+                    </div>
+                </div>
+                {% endwith %}
+                {% endfor %}
 
-                        <div class="field">
-                            <div class="control">
-                                <input class="input" type="text" name="nama" placeholder="Nama lengkap" required>
-                            </div>
-                        </div>
+                <div class="field is-hidden">
+                    <div class="control">
+                        <input class="input" type="text" name="total_price" value="{{ cart.get_total_price }}">
+                    </div>
+                </div>
 
-                        <div class="field">
-                            <div class="control">
-                                <input class="input" type="text" name="nomor_hp" placeholder="Nomor Hp" required>
-                            </div>
-                        </div>
+                <div class="field">
+                    <div class="control">
+                        <input class="input" type="text" name="nama" placeholder="Nama lengkap">
+                    </div>
+                    <span style="color: red"></span>
+                </div>
 
-                        <div class="field">
-                            <div class="control">
-                                <input class="textarea" type="text" name="pesan" placeholder="Tambahkan Pesan">
-                            </div>
-                        </div>
+                <div class="field">
+                    <div class="control">
+                        <input class="input" type="text" name="nomor_hp" placeholder="Nomor Hp">
+                    </div>
+                </div>
 
-                        <div class="field">
-                            <label class="label">Metode Pembayaran</label>
+                <div class="field">
+                    <div class="control">
+                        <input class="textarea" type="text" name="pesan" placeholder="Tambahkan Pesan">
+                    </div>
+                </div>
 
-                            <div class="control">
-                                <div class="select">
-                                    <select id="metode_bayar">
-                                        <option value="Select dropdown">Select dropdown</option>
-                                        <option value="With options">With options</option>
-                                    </select>
-                                </div>
-                            </div>
-                        </div>
+                <div class="field">
+                    <label class="label">Metode Pembayaran</label>
 
-                        <div class="field">
-                            <div class="control">
-                                <input class="input" type="text" name="nama_rekening" placeholder="Masukan nama pemilik rekening" required>
-                            </div>
+                    <div class="control">
+                        <div class="select">
+                            <select id="metode_bayar">
+                                <option value="Select dropdown">Select dropdown</option>
+                                <option value="With options">With options</option>
+                            </select>
                         </div>
+                    </div>
+                </div>
 
-                        <div class="field">
-                            <div class="control">
-                                <input class="input" type="text" name="id_akun" placeholder="Masukan id akun higgs domino">
-                            </div>
-                        </div>
+                <div class="field">
+                    <div class="control">
+                        <input class="input" type="text" name="nama_rekening" placeholder="Masukan nama pemilik rekening">
+                    </div>
+                </div>
 
-                        <div class="field">
-                            <div class="control">
-                                <button class="button is-primary" onclick="beli()"><a href="{% url 'cart:clear_cart' %}">Beli</a></button>
-                            </div>
-                        </div>
+                <div class="field">
+                    <div class="control">
+                        <input class="input" type="text" name="id_akun" placeholder="Masukan id akun higgs domino">
+                    </div>
+                </div>
+
+                <div class="field">
+                    <div class="control">
+                        <button class="button is-primary" onclick="return beli()"><a href="{% url 'cart:clear_cart' %}">Beli</a></button>
                     </div>
                 </div>
 
