@@ -1,18 +1,28 @@
+{% load humanize %}
+
 <div class="columns is-multiline">
     {% for p in product_list %}
-        <div class="column is-one-quarter-tablet is-two-quarter-mobile">
+        <div class="column is-one-quarter-tablet">
             <div class="card has-background-light is-clickable">
-                <div class="card-image is-hidden-mobile">
+                <div class="card-image is-hidden-mobile is-marginless is-paddingless">
                     <figure class="image is-square">
                         <img src="{{ p.picture.url }}">
                     </figure>
                 </div>
-
-                <div class="card-content">
-                    <div class="media">
-                        <div class="media-content has-text-centered">
-                            <a href="{{ p.get_url_path }}"><p class="title is-size-5-tablet is-size-5-mobile" >{{ p.title }}</p></a>
-                            <p class="subtitle is-size-6-tablet is-size-6-mobile has-text-grey mt-1">Rp {{ p.price }}</p>
+                <div class="card-content is-marginless has-text-centered">
+                    <div class="columns">
+                        <div class="column is-three-quarters is-paddingless">
+                            <p class="title is-size-6-tablet is-size-6-mobile" >{{ p.title }}</p>
+                            <p class="subtitle is-size-6-tablet is-size-6-mobile has-text-grey">Rp {{ p.price|intcomma }}</p>
+                        </div>
+                        <div class="column is-paddingless mt-1">
+                            <div class="control">
+                                <form action="{% url 'cart:add_cart' p.id %}" method="post">
+                                    {{ cart_product_form }}
+                                    {% csrf_token %}
+                                    <input class="button is-primary" type="submit" value="Beli" style="width:30px; height:20px; padding:0px;font-size: 12px;">
+                                </form>
+                            </div>
                         </div>
                     </div>
                 </div>

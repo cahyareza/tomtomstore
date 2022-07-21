@@ -1,5 +1,7 @@
 {% extends "base.html" %}
-{% load i18n static %}
+{% load i18n static humanize %}
+
+{% block title %} Cart | {% endblock %}
 
 {% block content %}
     <div class="container">
@@ -10,8 +12,9 @@
                 <div class="table">
                     <table class="table is-narrow">
                         <thead>
-                            <th>Product</th>
-                            <th>Price</th>
+                            <th>Produk</th>
+                            <th>Jumlah</th>
+                            <th>Harga</th>
                             <th></th>
                         </thead>
                         {% for item in cart %}
@@ -22,8 +25,9 @@
                                     <td class="is-size-6-mobile">
                                         {{ product.title }}
                                     </td>
-                                    <td>{{ item.total_price }}</td>
-                                    <td><button class="button is-danger is-size-7-mobile"><a href="{% url 'cart:remove_cart' product.id %}">Remove from cart</a></button></td>
+                                    <td>{{ item.quantity }}</td>
+                                    <td>{{ item.total_price|intcomma }}</td>
+                                    <td><button class="button is-danger is-size-7-mobile"><a href="{% url 'cart:remove_cart' product.id %}">Hapus</a></button></td>
                                 </tr>
                             </tbody>
                         {% endwith %}
@@ -31,8 +35,9 @@
 
                         <tfoot>
                             <tr>
-                                <td>Total cost</td>
-                                <td>{{ cart.get_total_price }}</td>
+                                <td>Total harga</td>
+                                <td>{{ cart.get_total_quantity }}</td>
+                                <td>{{ cart.get_total_price|intcomma }}</td>
                             </tr>
                         </tfoot>
                     </table>
@@ -51,7 +56,7 @@
 
                 <div class="field is-hidden">
                     <div class="control">
-                        <input class="input" type="text" name="total_price" value="{{ cart.get_total_price }}">
+                        <input class="input" type="text" name="total_price" value="{{ cart.get_total_price|intcomma }}">
                     </div>
                 </div>
 
@@ -78,10 +83,11 @@
                     <label class="label">Metode Pembayaran</label>
 
                     <div class="control">
-                        <div class="select">
+                        <div class="select is-size-7-mobile">
                             <select id="metode_bayar">
-                                <option value="Select dropdown">Select dropdown</option>
-                                <option value="With options">With options</option>
+                                {% for payment in payments %}
+                                    <option value="{{ payment.title }}">{{ payment.title }}({{ payment.number}}), an {{ payment.name }}</option>
+                                {% endfor %}
                             </select>
                         </div>
                     </div>
@@ -101,16 +107,24 @@
 
                 <div class="field">
                     <div class="control">
-                        <button class="button is-primary" onclick="return beli()"><a href="{% url 'cart:clear_cart' %}">Beli</a></button>
+                        <a href="{% url 'cart:clear_cart' %}"><button class="button is-primary" onclick="return beli()">Beli</button></a>
                     </div>
                 </div>
 
 
             {% else %}
-                <p>Your cart is empty!</p>
+                <div class="container has-text-centered">
+                    <p class="has-text-danger">Keranjang anda kosong!</p>
+                    <br>
+                    <button class="button is-primary">
+                        <a href="{% url 'frontpage' %}">Mulai belanja</a>
+                    </button>
+                </div>
             {% endif %}
         </div>
     </div>
+
+    <input-form @change-visible="changeVisible" :visible="visible"></input-form>
 {% endblock %}
 
 {% block js %}

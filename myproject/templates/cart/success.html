@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% load i18n static %}
+
+{% block title %}Thank you | {% endblock %}
+
+{% block content %}
+    <div class="container has-text-centered">
+        <div class="box">
+            <h1 class="title">Terimakasih telah belanja</h1>
+            <p class="has-text-danger">Segera lakukan pembayaran, dan pesanan anda akan diproses!</p>
+            <br>
+            <button class="button is-primary">
+                <a href="{% url 'frontpage' %}">Belanja lagi</a>
+            </button>
+        </div>
+    </div>
+{% endblock %}

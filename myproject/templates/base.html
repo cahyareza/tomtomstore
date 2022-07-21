@@ -5,7 +5,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Hello Bulma!</title>
+    <title>{% block title %}{% endblock %}TomTom Store</title>
     <link rel="stylesheet"
           href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.1/css/bulma.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -21,38 +21,102 @@
     <div id="app">
         <section class="hero is-fullheight">
 
-            <nav class="navbar has-background-primary mb-1" id="apps">
-                <div class="navbar-brand">
-                    <figure class="navbar-item image">
-                        <img src="{% static 'site/img/tomtom.png' %}" style="width: 6.25rem; height: 1rem; padding: 0.01rem; margin-right:2rem;">
-                    </figure>
-                    <a href="{% url 'cart:cart_detail' %}" class="navbar-item" style="position: absolute; top: 8px; right: 35px;">
-                        <span class="icon is-paddingless is-marginless has-text-bold">
-                           <i class="fa-solid fa-cart-plus" style="width:20px; height:20px;"></i>
-                        </span>
-                    </a>
-                    <a v-bind:aria-expanded="isActive" v-bind:class="{ 'is-active': isActive }" role="button" class="navbar-burger"
-                       aria-label="menu" data-target="navbarMenu" @click="isActive = !isActive">
-                        <span aria-hidden="true"></span>
-                        <span aria-hidden="true"></span>
-                        <span aria-hidden="true"></span>
-                    </a>
-                </div>
+            <div class="div" ref="div1">
+                <nav class="navbar has-background-primary mb-1" id="apps">
+                    <div class="navbar-brand">
 
-                <div id="navbarMenu" class="navbar-menu has-text-centered" v-bind:class="{ 'is-active': isActive }">
-                    <div class="navbar-start has-text-weight-bold">
-                        <button @click="goto('div1')" class="button is-text has-text-black mt-1"><strong>HOME</strong></button>
-                        <button @click="goto('div2')" class="button is-text has-text-black mt-1"><strong>HARGA</strong></button>
-                        <button @click="goto('div3')" class="button is-text has-text-black mt-1"><strong>ALUR BELI</strong></button>
-                        <button @click="goto('div4')" class="button is-text has-text-black mt-1"><strong>TESTIMONI</strong></button>
-                        <button @click="goto('div5')" class="button is-text has-text-black mt-1"><strong>KONTAK</strong></button>
+
+                        <figure class="navbar-item image">
+                            <button class="button is-primary is-paddingless is-centered">
+                                <a href="{% url 'frontpage' %}" style="color: black;"><img src="{% static 'site/img/tomtom.png' %}"></a>
+                            </button>
+                        </figure>
+
+
+                        <a href="{% url 'cart:cart_detail' %}" class="navbar-item" style="position: absolute; top: 8px; right: 35px;">
+                            <span class="icon is-paddingless is-marginless has-text-bold">
+                                <i class="fa-solid fa-cart-plus" style="width:20px; height:20px;"></i>
+                            </span>
+                            {% if cart %}
+                                <span class="badge is-size-7" style="position: absolute; border-radius: 50%; top: -3px; right: -0 px;
+                                    padding: 1px 4px; background-color: red; color: white;">{{ cart.get_total_quantity }}</span>
+                            {% endif %}
+                        </a>
+
+
+                        <a v-bind:aria-expanded="isActive" v-bind:class="{ 'is-active': isActive }" role="button" class="navbar-burger"
+                           aria-label="menu" data-target="navbarMenu" @click="isActive = !isActive">
+                            <span aria-hidden="true"></span>
+                            <span aria-hidden="true"></span>
+                            <span aria-hidden="true"></span>
+                        </a>
                     </div>
-                </div>
-            </nav>
 
-            {% block content %}
-            {% endblock %}
+                    {% if request.get_full_path == "/en/" or request.get_full_path == "/en/?page=1" or request.get_full_path == "/en/?page=2" or "/en/?page=3" %}
+                        <div id="navbarMenu" class="navbar-menu has-text-centered" v-bind:class="{ 'is-active': isActive }">
+                            <div class="navbar-start has-text-weight-bold">
+                                <button class="button is-text has-text-black mt-1 pt-4"><a href="{% url 'frontpage' %}"><strong>HOME</strong></a></button>
+                                <button @click="goto('div5')" class="button is-text has-text-black mt-1 pt-4"><strong>KONTAK</strong></button>
+                            </div>
+                        </div>
+                    {% endif %}
+                </nav>
+            </div>
+
+
+            <div class="columns">
+                <div class="column is-three-fifths-desktop is-offset-one-fifth-desktop">
+                    {% block content %}
+                    {% endblock %}
+                </div>
+            </div>
+
             <!-- /.hero-foot -->
+            <div class="div" ref="div5">
+                <main class="hero-foot center has-background-white-ter p-2">
+                    <div id="grid" style="width: 788px;">
+                        <div id="a" class="center-column mt-2">
+                            <p class="subtitle is-size-5-mobile has-text-centered has-text-black"><strong>
+                                Temukan kami di:
+                            </strong></p>
+                            <span class="icon has-text-info is-medium">
+                                <a href="https://www.facebook.com/groups/370970267136489/?ref=share"><i class="fab fa-2x fa-facebook-square" ></i></a>
+                            </span>
+                        </div>
+                        <div id="b" class="column">
+                            <p class="subtitle is-size-5-mobile has-text-black has-text-centered is-marginless">
+                                <strong>TomTom Store</strong><br>
+                            </p>
+                            <p class="has-text-black has-text-centered is-marginless">Agen Chips Amanah & Terpercaya</p>
+                        </div>
+                        <div id="c" class="center-column">
+                            <p class="subtitle is-size-5-mobile has-text-black has-text-centered">
+                                <strong>Pembayaran</strong><br>
+                            </p>
+                            <div class="columns is-multiline is-paddingless is-marginless">
+                                <div class="column is-one-third is-gapless p-1 is-marginless">
+                                    <img src="{% static 'site/img/dana.png' %}" style="width:50px; height:25px;">
+                                </div>
+                                <div class="column is-one-third is-gapless p-1 is-marginless">
+                                    <img src="{% static 'site/img/bri.png' %}" style="width:50px; height:25px;">
+                                </div>
+                                <div class="column is-one-third is-gapless p-1 is-marginless">
+                                    <img src="{% static 'site/img/bca.png' %}" style="width:50px; height:25px;">
+                                </div>
+                                <div class="column is-one-third is-offset-one-third is-gapless p-1 has-text-center">
+                                    <img src="{% static 'site/img/gopay.png' %}" style="width:50px; height:25px;">
+                                </div>
+                            </div>
+                        </div>
+                        <div id="d" class="column">
+                            <p class="subtitle is-size-5-mobile has-text-black has-text-centered is-marginless">
+                                <strong>Jam Operasional</strong><br>
+                            </p>
+                            <p class="has-text-black has-text-centered is-marginless">Senin - Ahad(08.00 - 21.00 WIB)</p>
+                        </div>
+                    </div>
+                </main>
+            </div>
         </section>
     </div>
 

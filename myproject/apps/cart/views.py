@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect, get_object_or_404
 from .cart import Cart
 from .forms import CartAddProductForm
 from django.views.decorators.http import require_POST
-from ..store.models import Product
+from ..store.models import Product, Payment
 
 @require_POST
 def add_cart(request, product_id):
@@ -24,9 +24,11 @@ def remove_cart(request, product_id):
     return redirect('cart:cart_detail')
 
 def cart_detail(request):
+    payments = Payment.objects.all()
     cart = Cart(request)
     context = {
         'cart': cart,
+        'payments': payments
     }
     return render(request, 'cart/cart.html', context)
 
@@ -34,6 +36,6 @@ def cart_detail(request):
 def clear_cart(request):
     cart = Cart(request)
     cart.clear()
-    return redirect('frontpage')
+    return render(request, 'cart/success.html')
 
 

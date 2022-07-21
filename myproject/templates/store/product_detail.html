@@ -1,5 +1,7 @@
 {% extends "base.html" %}
-{% load i18n static %}
+{% load i18n static humanize %}
+
+{% block title %} Produk | {% endblock %}
 
 {% block content %}
     <div class="container p-5">
@@ -16,7 +18,7 @@
                     <h1 class="title is-size-5-mobile">{{ product.title }}</h1>
                     <hr>
                     <h2 class="subtitle is-size-6-mobile has-text-grey">
-                        Rp {{ product.price }}
+                        Rp {{ product.price|intcomma }}
                     </h2>
                     <div class="control">
                         <form action="{% url 'cart:add_cart' product.id %}" method="post">
@@ -29,7 +31,8 @@
             </div>
             <div class="column is-12">
                 <div class="box">
-                    <h1 class="title has-text-centered has-text-bold is-size-5 is-size-5-mobile p-1">Detail Produk</h1>
+                    <h1 class="title has-text-centered has-text-bold is-size-5 is-size-5-mobile is-paddingless is-marginless">Detail Produk</h1>
+                    <hr>
                     {% if product.description %}
                         <p>{{ product.description }}</p>
                     {% endif %}

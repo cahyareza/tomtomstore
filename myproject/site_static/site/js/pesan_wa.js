@@ -34,15 +34,21 @@ function beli() {
         return false;
     }
 
-    var url = "https://api.whatsapp.com/send?phone=6282213566900&text="
+    var url = "https://api.whatsapp.com/send?phone=6289608372301&text="
+        + "FORMAT BELI" + "%0a"
+        + "%0a"
         + "Name: " + nama + "%0a"
         + "Nomor hp: " + nomor_hp + "%0a"
-        + "Pesan: " + pesan  + "%0a"
+        + "Catatan: " + pesan  + "%0a"
         + "Produk: " + products  + "%0a"
-        + "Jumlah: " + total_price  + "%0a"
+        + "Jumlah biaya: Rp " + total_price  + "%0a"
         + "Pembayaran: " + metode_bayar_value  + "%0a"
         + "Nama di rekening/dompet digital: " + nama_rekening  + "%0a"
-        + "Id akun: " + id_akun  + "%0a";
+        + "Id akun: " + id_akun  + "%0a"
+        + "%0a"
+        + "Keterangan:" + "%0a"
+        + "Pastikan nama rekening/dompet digital tujuan pembayaran atas nama Punjung Wirohastomo, "
+        + "jika tidak itu merupakan penipuan."
 
     window.open(url, '_blank').focus();
 

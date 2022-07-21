@@ -83,7 +83,9 @@ const InputForm = {
           'message': this.fields.message,
       };
 
-      var url = "https://api.whatsapp.com/send?phone=6282213566900&text="
+      var url = "https://api.whatsapp.com/send?phone=6289608372301&text="
+          + "FORMAT TANYA" + "%0a"
+          + "%0a"
           + "Name: " + data.nama + "%0a"
           + "nomor: " + data.nomor + "%0a"
           + "message: " + data.message  + "%0a";

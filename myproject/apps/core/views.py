@@ -3,12 +3,15 @@ from django.core.paginator import Paginator, PageNotAnInteger, EmptyPage
 
 from ..store.models import Product
 from ..webpage.models import Testimoni
+from myproject.apps.cart.forms import CartAddProductForm
 
 # Create your views here.
 
 def frontpage(request):
     products = Product.objects.filter(is_featured=1)
     testimonis = Testimoni.objects.all()
+
+    cart_product_form = CartAddProductForm()
 
     paginator = Paginator(products, 4)  # 3 posts in each page
     page = request.GET.get('page', 1)
@@ -25,6 +28,7 @@ def frontpage(request):
         "product_list": product_list,
         "products": products,
         'testimonis': testimonis,
+        'cart_product_form': cart_product_form,
     }
 
     return render(request, 'frontpage.html', context)
