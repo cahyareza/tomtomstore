@@ -134,3 +134,4 @@ dmypy.json
 # Secrets
 secrets.jsonmyproject/site_static/site/.DS_Store
 myproject/site_static/site/.DS_Store
+deployment-nginx
