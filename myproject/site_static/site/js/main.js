@@ -127,7 +127,7 @@ var app = new Vue({
     },
     async mounted () {
         const response = await axios
-            .get(`http://127.0.0.1:8000/en/webpage/testimoni/`)
+            .get(`https://www.myproject.192.168.56.5.xip.io/en/webpage/testimoni/`)
             .then(function(response) {
                 return response.data;
             });
