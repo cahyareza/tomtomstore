@@ -127,7 +127,7 @@ var app = new Vue({
     },
     async mounted () {
         const response = await axios
-            .get(`https://www.myproject.192.168.56.5.xip.io/en/webpage/testimoni/`)
+            .get(`https://www.tomtomstore.website/en/webpage/testimoni/`)
             .then(function(response) {
                 return response.data;
             });
