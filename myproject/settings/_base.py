@@ -172,6 +172,6 @@ EMAIL_HOST_PASSWORD = get_secret("EMAIL_HOST_PASSWORD")
 
 REST_FRAMEWORK = {
     'DEFAULT_PERMISSION_CLASSES': [
-        'rest_framework.permissions.IsAuthenticated',  # new
+        'rest_framework.permissions.IsAuthenticatedOrReadOnly',  # new
     ]
 }

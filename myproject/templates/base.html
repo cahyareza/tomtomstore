@@ -26,7 +26,7 @@
                     <div class="navbar-brand">
 
 
-                        <figure class="navbar-item image">
+                        <figure class="navbar-item">
                             <button class="button is-primary is-paddingless is-centered">
                                 <a href="{% url 'frontpage' %}" style="color: black;"><img src="{% static 'site/img/tomtom.png' %}"></a>
                             </button>
@@ -55,8 +55,8 @@
                     {% if request.get_full_path == "/en/" or request.get_full_path == "/en/?page=1" or request.get_full_path == "/en/?page=2" or "/en/?page=3" %}
                         <div id="navbarMenu" class="navbar-menu has-text-centered" v-bind:class="{ 'is-active': isActive }">
                             <div class="navbar-start has-text-weight-bold">
-                                <button class="button is-text has-text-black mt-1 pt-4"><a href="{% url 'frontpage' %}"><strong>HOME</strong></a></button>
-                                <button @click="goto('div5')" class="button is-text has-text-black mt-1 pt-4"><strong>KONTAK</strong></button>
+                                <button class="button is-text has-text-black mt-2"><a href="{% url 'frontpage' %}"><strong>HOME</strong></a></button>
+                                <button @click="goto('div5')" class="button is-text has-text-black mt-2"><strong>KONTAK</strong></button>
                             </div>
                         </div>
                     {% endif %}
@@ -123,7 +123,7 @@
     <section class="section has-background-primary p-1">
         <div class="column has-text-left">
             <p class="subtitle is-size-6 has-text-white">
-                © 2022 Copyright tomtomstore.net
+                © 2022 Copyright tomtomstore.website
             </p>
         </div>
     </section>
